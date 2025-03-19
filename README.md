@@ -8,6 +8,9 @@ This repository contains an LSTM-based deep learning model for Fake-Review-Detec
 - **Hyperparameter Optimization**: Tuning LSTM layers, units, and learning rate with Bayesian Optimization.
 - **Evaluation**: Assessing model performance with accuracy, binary cross-entropy loss, and confusion matrices.
 
+## 🚀 Live Demo  
+Try the deployed model here: **[Fake Review Detection App](https://fake-review-detection-mm7necqynrylgdb5rkxmqt.streamlit.app/)**
+
 ## 📂 Project Structure
 ```
 📦 LSTM-Text-Classification
