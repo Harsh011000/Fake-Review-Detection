@@ -136,6 +136,7 @@ selenium==4.27.1
 serpent==1.41
 nltk==3.9.1
 smmap==5.0.1
+gunicorn
 
 sortedcontainers==2.4.0
 
