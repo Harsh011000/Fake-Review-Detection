@@ -10,15 +10,21 @@ from tensorflow.keras.layers import Embedding
 from tensorflow.keras.preprocessing import sequence
 from tensorflow.keras.initializers import glorot_uniform
 np.random.seed(1)
+from flask_cors import CORS
 
-# Download the tokenizer if you haven't already
-nltk.download('punkt')
-nltk.download('punkt_tab')
+# Set persistent NLTK data path
+NLTK_DATA_DIR = "/home/user/nltk_data"
+nltk.data.path.append(NLTK_DATA_DIR)
+
+# Redownload punkt (to be extra sure)
+nltk.download("punkt", download_dir=NLTK_DATA_DIR)
+nltk.download("stopwords", download_dir=NLTK_DATA_DIR)
+nltk.download('punkt_tab',download_dir=NLTK_DATA_DIR)
 
 
 from joblib import load
 
-word_to_index = load('Embeddings/word_to_index.joblib')
+word_to_index = load('word_to_index.joblib')
 
 def loadModel():   
     # Registering the Custom Embedding Layer
@@ -71,6 +77,7 @@ def predict_model(text):
 
 
 app = Flask(__name__)
+CORS(app)
 
 # Define API endpoint for predictions
 @app.route("/predict", methods=["POST"])
@@ -88,4 +95,4 @@ def predict():
     return jsonify({"prediction": result[0], "score": result[1]})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+    app.run(host="0.0.0.0", port=int(os.environ.get('PORT', 7860)))
