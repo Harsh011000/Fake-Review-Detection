@@ -15,7 +15,6 @@ Try the deployed model here: **[Fake Review Detection App](https://harsh-p-fake-
 ```
 📦 LSTM-Text-Classification
 ├── 📜 Embeddings.ipynb        # Loading GloVe embeddings and preparing embedding matrix
-├── 📜 Hyperparameter Tuning.ipynb # Hyperparameter tuning using Ray Tune
 ├── 📜 Model Training.ipynb    # Training and evaluating the model
 ├── 📜 glove.6B.50d.txt        # Pre-trained GloVe embeddings (50d vectors)
 ├── 📜 README.md               # Project documentation
@@ -45,7 +44,7 @@ True  Machine    [TN]  |   [FP]
 ```
 
 ## 🛠️ Hyperparameter Tuning
-Hyperparameter optimization is performed using **Ray Tune** with **Bayesian Optimization** (BOHB). The tuning process explores:
+Hyperparameter optimization is performed using random search. The tuning process explores:
 - Number of LSTM layers
 - LSTM hidden units
 - Learning rate
