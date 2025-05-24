@@ -54,7 +54,6 @@ Hyperparameter optimization is performed using random search. The tuning process
 - TensorFlow
 - NumPy
 - Pandas
-- Ray Tune
 - Matplotlib
 - Seaborn
 
